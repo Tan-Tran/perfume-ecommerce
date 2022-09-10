@@ -19,6 +19,6 @@
    - Frontend: change from Class Component to Functional Component
    - Backend: using Mail Trap to send email.
 
-# HOW TO RUN THIS APP:
+# Run app:
 - run "docker-compose up --build -d"
 - url: http://localhost:80
