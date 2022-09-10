@@ -11,7 +11,7 @@
       Spring Security: Authentication, Authorization, JWT
       RestAPI, Send email, Exception Handler
       Database: Postgres, Flyway
-   ## 2.3 Docker (Original process not run Docker)
+   ## 2.3 Docker (Original resource not using Docker)
       Basic docker
       Docker volume, Docker compose
       Create small microservice for this project.
