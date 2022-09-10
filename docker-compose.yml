@@ -1,0 +1,53 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:14.1-alpine
+    container_name: db
+    restart: always
+    ports:
+      - 5432:5432
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    environment:
+      - POSTGRES_DB=perfume
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=5432
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
+  flyway:
+    image: flyway/flyway
+    command: -url=jdbc:postgresql://db:5432/perfume -schemas=myschema -user=postgres -password=5432 migrate
+    volumes:
+      - migrations:/flyway/sql
+    restart: on-failure
+    depends_on:
+      - db
+
+  backend:
+    restart: always
+    build: ./perfume_backend/.
+    container_name: perfume_app
+    environment:
+      - DB_SERVER=db
+      - POSTGRES_DB=perfume
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=5432
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  frontend:
+    restart: always
+    build: ./perfume_frontend/.
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  migrations:
