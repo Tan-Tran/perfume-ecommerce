@@ -1,5 +1,5 @@
 # About Perfume Ecommerce App
-   First, I want to say this is not really my project. I reference from https://github.com/sourcecodeexamples/ecommerce-spring-reactjs
+  The source code that I refer to https://github.com/sourcecodeexamples/ecommerce-spring-reactjs
 # What I learn from this project?
    ## 2.1 Frontend
       Learn JS, ReactJs
