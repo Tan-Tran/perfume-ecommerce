@@ -13,7 +13,7 @@
    ## 2.3 Docker (Original resource not using Docker)
       Basic docker
       Docker volume, Docker compose
-   ## 2.4 New updates base on original source
+   ## 2.4 Updates:
       Frontend: ReactJS - convert from class component to functional component
       Backend: using mail trap to send email.
 
